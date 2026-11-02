@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#245be8">
+    <title>AirCare - City Air Quality</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="brand">🌍 AirCare</div>
+        <p>Smart City Air Quality Monitoring System</p>
+        <h2>India AQI Dashboard</h2>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>City Air Quality Index</h1>
+            <p>Monitor air pollution and understand the air you breathe.</p>
+        </section>
+
+        <section class="search-card">
+            <h2>🔍 Search Your City</h2>
+            <form id="searchForm">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter Indian city name..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="searchBtn">
+                    Search City
+                </button>
+            </form>
+            <div id="suggestions" class="suggestions"></div>
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="aqi-card" id="resultSection">
+            <h2>🌫️ Air Quality Overview</h2>
+
+            <h3 id="cityName">Search a city to begin</h3>
+
+            <div class="aqi-number" id="aqiValue">--</div>
+
+            <span class="aqi-status" id="aqiStatus">
+                Waiting for data
+            </span>
+
+            <p class="updated" id="updatedTime">
+                Live air quality information
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="aqiBar"></div>
+            </div>
+
+            <div class="health-box">
+                <h3>💚 Health Recommendation</h3>
+                <p id="healthAdvice">
+                    Search your city to see air quality recommendations.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🌤️ Weather Information</h2>
+
+            <div class="weather-grid">
+
+                <div class="info-card">
+                    <span>🌡️ Temperature</span>
+                    <h2 id="temperature">-- °C</h2>
+                </div>
+
+                <div class="info-card">
+                    <span>💧 Humidity</span>
+                    <h2 id="humidity">-- %</h2>
+                </div>
+
+                <div class="info-card">
+                    <span>💨 Wind Speed</span>
+                    <h2 id="wind">-- km/h</h2>
+                </div>
+
+                <div class="info-card">
+                    <span>🌫️ PM2.5</span>
+                    <h2 id="pm25">-- µg/m³</h2>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🧪 Air Pollutant Details</h2>
+
+            <div class="pollutant-grid">
+                <div class="pollutant">
+                    <span>PM10</span>
+                    <strong id="pm10">--</strong>
+                    <small>µg/m³</small>
+                </div>
+
+                <div class="pollutant">
+                    <span>PM2.5</span>
+                    <strong id="pm25detail">--</strong>
+                    <small>µg/m³</small>
+                </div>
+
+                <div class="pollutant">
+                    <span>CO</span>
+                    <strong id="co">--</strong>
+                    <small>µg/m³</small>
+                </div>
+
+                <div class="pollutant">
+                    <span>NO₂</span>
+                    <strong id="no2">--</strong>
+                    <small>µg/m³</small>
+                </div>
+
+                <div class="pollutant">
+                    <span>SO₂</span>
+                    <strong id="so2">--</strong>
+                    <small>µg/m³</small>
+                </div>
+
+                <div class="pollutant">
+                    <span>O₃</span>
+                    <strong id="o3">--</strong>
+                    <small>µg/m³</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card about">
+            <h2>📊 About Air Quality Index</h2>
+
+            <p>
+                Air Quality Index (AQI) indicates the level of air
+                pollution in an area. Higher values indicate greater
+                pollution and potential health concerns.
+            </p>
+
+            <div class="aqi-level">
+                <p><b>0–50:</b> Good</p>
+                <p><b>51–100:</b> Satisfactory</p>
+                <p><b>101–200:</b> Moderate</p>
+                <p><b>201–300:</b> Poor</p>
+                <p><b>301–400:</b> Very Poor</p>
+                <p><b>401–500:</b> Severe</p>
+            </div>
+
+            <p class="disclaimer">
+                Note: The displayed AQI is an indicative PM2.5-based
+                estimate, not an official CPCB station reading.
+                Real-world monitoring values can differ.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>🌍 AirCare</h3>
+        <p>Smart City Air Quality Monitoring System</p>
+        <p>Data source: Open-Meteo & Copernicus CAMS</p>
+        <p>© 2026 AirCare Project | Educational Use</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
